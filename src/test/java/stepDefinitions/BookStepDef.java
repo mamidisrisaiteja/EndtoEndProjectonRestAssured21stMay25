@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,7 +14,6 @@ import org.json.simple.parser.ParseException;
 import org.junit.Assert;
 import utils.ReqFileReader;
 import utils.authTokenGeneration;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +23,11 @@ public class BookStepDef {
     RequestSpecification resq;
 
     authTokenGeneration authtokenGen = new authTokenGeneration();
+
+    @Before
+    public void printLogBefore(){
+        System.out.println("Scenario execution started");
+    }
 
     @Given("Simple Books API is available")
     public void simple_books_api_is_available() {

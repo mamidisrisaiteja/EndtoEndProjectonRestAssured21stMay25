@@ -1,6 +1,6 @@
 package models;
 
-public class authorizationGenerationRequestDTO {
+    public class authorizationGenerationRequestDTO {
     String clientName;
     String clientEmail;
 
